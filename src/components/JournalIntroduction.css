@@ -1,0 +1,211 @@
+.journal-intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.journals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.journal-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.journal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.journal-card-cover {
+  height: 200px;
+  overflow: hidden;
+}
+
+.journal-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.journal-card:hover .journal-card-cover img {
+  transform: scale(1.05);
+}
+
+.journal-card-content {
+  padding: 20px;
+}
+
+.journal-card-content h3 {
+  margin: 0 0 10px 0;
+  color: #1a73e8;
+}
+
+.journal-short-desc {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.journal-metrics-preview {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.view-details-btn {
+  width: 100%;
+  padding: 10px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.view-details-btn:hover {
+  background: #1557b0;
+}
+
+/* 详情页样式 */
+.journal-detail {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.back-button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1a73e8;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 0;
+  font-size: 16px;
+}
+
+.back-button span {
+  font-size: 20px;
+}
+
+.journal-header {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.journal-cover {
+  flex: 0 0 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.journal-cover img {
+  width: 100%;
+  height: auto;
+}
+
+.journal-info {
+  flex: 1;
+}
+
+.journal-metrics {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.metric {
+  text-align: center;
+}
+
+.metric-value {
+  display: block;
+  font-size: 24px;
+  font-weight: 500;
+  color: #1a73e8;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.journal-description {
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.scope-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.scope-item {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.scope-item::before {
+  content: '•';
+  position: absolute;
+  left: 10px;
+  color: #1a73e8;
+}
+
+/* 动画效果 */
+.journal-detail {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .journal-header {
+    flex-direction: column;
+  }
+
+  .journal-cover {
+    flex: none;
+    max-width: 100%;
+  }
+
+  .journal-metrics {
+    flex-wrap: wrap;
+  }
+
+  .scope-list {
+    grid-template-columns: 1fr;
+  }
+} 
